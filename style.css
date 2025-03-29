@@ -1,0 +1,69 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #fff5f5; /* Pinkish-white background */
+}
+
+@keyframes zoomInOut {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+h1 {
+    font-size: 2.5em;
+    animation: zoomInOut 2s infinite; /* Apply the animation */
+    display: inline-block; /* Ensure the element is treated as inline-block for transform */
+    margin: 0; /* Remove any default margin that might interfere */
+}
+
+.container {
+    background-color: #fff; /* White background for the box */
+    border: 3px solid #ff0000; /* Red border */
+    border-radius: 20px; /* Rounded corners */
+    padding: 30px; /* Padding inside the box */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Slightly stronger shadow */
+    max-width: 700px; /* Limit the width */
+    margin: 40px auto; /* Center the box and add spacing from the top */
+    text-align: left; /* Align text to the left */
+    line-height: 1.8; /* Improve readability */
+    color: #333; /* Dark text color */
+}
+
+.container h1 {
+    text-align: center; /* Center the title */
+    color: #ff4d4d; /* Red color for the title */
+    font-size: 1.8em; /* Adjust font size */
+    margin-bottom: 20px; /* Add spacing below the title */
+}
+
+.container p {
+    margin-bottom: 15px; /* Add spacing between paragraphs */
+    font-size: 1.1em; /* Slightly larger font for readability */
+}
+
+.container .text-end {
+    text-align: right; /* Align signature to the right */
+    font-style: italic; /* Italicize the signature */
+    font-size: 1.1em; /* Slightly larger font for the signature */
+}
+
+.photo-box {
+    max-width: 600px;
+    margin: 0 auto;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.photo-box img {
+    width: 100%; /* Make the image responsive */
+    max-width: 500px; /* Limit the maximum width */
+    height: auto; /* Maintain aspect ratio */
+    margin: 0 auto; /* Center the image */
+    display: block; /* Ensure the image is treated as a block element */
+}
