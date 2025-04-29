@@ -8,6 +8,15 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Background Music -->
+    <audio autoplay loop>
+        <source src="music/romantic_song.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Falling Hearts -->
+    <div id="hearts-container"></div>
+
     <header class="bg-transparent py-3">
         <nav class="navbar navbar-expand-lg navbar-light bg-danger rounded-pill shadow mx-auto" style="max-width: 600px;">
             <div class="container-fluid justify-content-center">
@@ -27,7 +36,42 @@
     </header>
     <main class="mt-5">
         <h1 class="text-danger fw-bold">HAPPY MONTHSARY, MY LOVE!</h1>
+
+        <!-- Love Quotes Section -->
+        <div class="love-quotes mt-5">
+            <p id="quote" class="text-danger fw-bold"></p>
+        </div>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Falling Hearts Animation
+        const heartsContainer = document.getElementById('hearts-container');
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = Math.random() * 3 + 2 + 's';
+            heartsContainer.appendChild(heart);
+            setTimeout(() => heart.remove(), 5000);
+        }
+        setInterval(createHeart, 300);
+
+        // Rotating Love Quotes
+        const quotes = [
+            "You are my today and all of my tomorrows.",
+            "I love you more than words can express.",
+            "Every love story is beautiful, but ours is my favorite.",
+            "You are the best thing that ever happened to me.",
+            "I fall in love with you more every day."
+        ];
+        let quoteIndex = 0;
+        const quoteElement = document.getElementById('quote');
+        function showNextQuote() {
+            quoteElement.textContent = quotes[quoteIndex];
+            quoteIndex = (quoteIndex + 1) % quotes.length;
+        }
+        setInterval(showNextQuote, 5000);
+        showNextQuote();
+    </script>
 </body>
 </html>
